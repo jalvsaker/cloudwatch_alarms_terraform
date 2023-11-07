@@ -12,7 +12,7 @@ Logg på Cloud 9 miljøet ditt som vanlig
 
 ## Bruk Terraform til å lage et CloudWatch DashBoard 
 
-* Lag en Fork av dette repoet til Cloud9 miljøet ditt. Se i katalogen "infra" - her finner dere filen *dashboard.tf* som inneholder Terraformkode for et CloudWatch Dashboard.
+* Lag en Fork av dette repoet til Cloud9 miljøet ditt. Se i katalogen "infra" - her finner dere filen *main.tf* som inneholder Terraformkode for et CloudWatch Dashboard.
 * Du trenger å lage en fork, i din egen GitHub Konto, fordi du skal lage egne repository secrets osv når du skal lage en GitHub Actions workflow senere. 
 * Git Clone  din *egen fork* inn i Cloud9 miljøet ditt
 * Som dere ser beskrives dashboardet i et JSON-format. Her finner dere dokumentasjon https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html
@@ -50,7 +50,7 @@ THEREBEDRAGONS
 ```
 ## TODO 
 
-* Skriv en *provider.tf* i samme katalog som dashboard.tf - og kjør terraform init / plan / apply fra Cloud 9 miljøet ditt
+* Skriv en *provider.tf* i samme katalog som main.tf - og kjør terraform init / plan / apply fra Cloud 9 miljøet ditt
 * Se gjerne på https://github.com/glennbechdevops/terraform-app-runner - for inspirasjon
 * Se at det blir opprettet et Dashboard
 
@@ -369,6 +369,14 @@ Du trenger ikke lage en Pipeline for Java applikasjonen, kun for Terraform i den
 * Kan du lage en ny Controller metode med ny funksjonalitet i Javakoden ? 
 * Bruk gjerne følgende guide som inspirasjon https://www.baeldung.com/micrometer
 * Referanseimplementasjon; https://micrometer.io/docs/concepts
+
+## Ekstraoppgaver 2
+
+* Lag en container av Java applikasjon og bygg den og push til ECR via GitHub Actions
+* Lag terraformkode for en Apprunner servie for aplkasjonen
+* Pass på å lage avhengighet mellom jobbene som bygger container og terraformkoden
+* Lag modulen din som et eget GitHub repository . 
+
 
 Nyttig informasjon; 
 
